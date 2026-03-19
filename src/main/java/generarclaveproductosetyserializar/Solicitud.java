@@ -18,9 +18,9 @@ public class Solicitud {
     }
 
     public String generarNombreUsuario() {
-        String inicialNombre = nombre.substring(0,1).toLowerCase();
+        String nombreMinuscula = nombre.toLowerCase();
         String apellidosMinuscula = apellidos.toLowerCase();
-        return inicialNombre + apellidosMinuscula;
+        return nombreMinuscula + " " + apellidosMinuscula;
     }
 
     public String toString() {

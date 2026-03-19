@@ -1,23 +1,34 @@
 package generarclaveproductosetyserializar;
 
-public class Clave {
-    private String codigo;
-    private Solicitud solicitante;
+import java.io.Serializable;
 
-    public Clave (String codigo, Solicitud solicitante) {
-        this.codigo = codigo;
-        this.solicitante = solicitante;
+public class Clave implements Serializable {
+    private String clave;
+
+    public Clave(String clave) {
+        this.clave = clave;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public Solicitud getSolicitante() {
-        return solicitante;
+    public String getClave() {
+        return clave;
     }
 
     public String toString() {
-        return "Clave: " + codigo + " Solicitante: " + solicitante;
+        return "Clave: " + clave;
+    }
+
+    public boolean equals(Object clave) {
+        boolean iguales = false;
+
+        if (clave != null && getClass() == clave.getClass()) {
+
+            if (this.clave.equals( ((Clave) clave).getClave()));
+                iguales = true;
+        }
+        return iguales;
+    }
+
+    public int hashCode() {
+        return clave.hashCode();
     }
 }
